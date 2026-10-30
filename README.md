@@ -42,6 +42,6 @@ Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
 - `src/routes/kb/incidents/4471-what-it-holds/+page.svx` — a signed page: what #4471 really holds (three problems, not one), with counts computed at render time.
 - `src/lib/kb/split.ts`, `src/lib/kb/SplitTable.svelte` — the logic behind that page (runs `causes.ts` plus `desk-notes.json`).
 - `rendered/` — the kb built as a static site, so the page can be read as the desk will see it: `rendered/kb/incidents/4471-what-it-holds.html` (and the screenshots `4471-what-it-holds.jpg`, `4471-what-it-holds-2.jpg`).
-- Tickets, one per problem, are this repo's issues: #1 parser (374 reports), #2 hint (33), #3 one-day move (5).
+- Tickets, one per problem, are this repo's issues: #1 parser (379 reports, the desk's own count), #2 hint (33), #3 one-day move (5, footnoted inside parser).
 
 Build: `npm install && npm run build` (SvelteKit + mdsvex, static adapter; output in `build/`).

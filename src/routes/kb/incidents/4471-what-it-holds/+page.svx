@@ -46,8 +46,8 @@ hint. Every one of these came through the form.
 
 Five reports describe a move of exactly one day: a Tuesday shown as the Monday, one meeting on two
 days in Lisbon and Toronto, an invite that arrived before the booking. The desk read them as a
-one-day move and footnoted them under `parser` by tenant. They are a time-zone or day-boundary
-fault and had no ticket until now.
+one-day move and footnoted them under `parser` by tenant, so they are counted in the parser row
+above, as the desk counts them. They are a time-zone or day-boundary fault and had no ticket until now.
 
 ## Why the merge hid this
 
@@ -61,7 +61,8 @@ reports and 15 `parser` tags on hint reports. The tenant's locale and form decid
 ## What to do
 
 - Keep #4471 for `parser`; it covers most of the queue.
-- Open the two other tickets (linked in the table) and move their reports out of #4471.
+- Open the two other tickets (linked in the table). Move the `hint` reports out of #4471; keep the one-day moves
+  counted where the desk filed them until engineering places them.
 - When a report arrives, place it by tenant and channel with `causeOf`, not by intake tag.
 - Re-read [the incident page](/kb/incidents/4471) after the parser fix ships: its "one issue" line
   will be wrong until then.
