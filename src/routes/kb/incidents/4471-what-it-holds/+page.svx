@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · what it holds: three problems, not one'
 owner: Maciej Żybura
-status: proposed
+status: closed
 reviewed: 2026-10-30
 signature: 'v1.eyJzdWIiOiIyMzA1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzNDY5NjksImV4cCI6MTc5MzQzMzM2OX0.jxPGHFCsWCW3fuEuw2OMu7gRSG7bf_CCixTxUoyeXEI'
 ---
@@ -17,9 +17,9 @@ signature: 'v1.eyJzdWIiOiIyMzA1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpY
 The desk's own logic in `causes.ts` tells two causes apart, and the desk's notes name a third. The
 table below is computed from the same export the incident page uses; nothing in it is typed in.
 
-<Callout kind="warn">
-Fixing the parser clears most of #4471, not all of it. Two smaller faults stay open until they get
-their own fix.
+<Callout>
+Desk update, 05 October: #4471 closed. <code>parser</code> fixed (<code>fix(dates): parse dd/mm for eu locales</code>);
+<code>hint</code> won't fix, the booking-v3 form is retired. The tickets linked below are closed the same way.
 </Callout>
 
 ## What #4471 holds
@@ -58,13 +58,18 @@ booking-v3 form and from the app share a subject and land in one ticket, though
 `hint` tags are guesses from the reporter's browser locale: 23 `hint` tags sit on parser
 reports and 15 `parser` tags on hint reports. The tenant's locale and form decide, not the browser.
 
-## What to do
+## How it closed
 
-- Keep #4471 for `parser`; it covers most of the queue.
-- Open the two other tickets (linked in the table). Move the `hint` reports out of #4471; keep the one-day moves
-  counted where the desk filed them until engineering places them.
+| problem | outcome | ticket |
+|---|---|---|
+| `parser` | fixed · `fix(dates): parse dd/mm for eu locales` | #1, closed as completed |
+| `hint` | won't fix · booking-v3 form retired, its hint with it | #2, closed as not planned |
+| `one-day-move` | not placed by engineering; stays footnoted under `parser` | #3, closed with #4471; reopen on the next report |
+
+## What to keep doing
+
 - When a report arrives, place it by tenant and channel with `causeOf`, not by intake tag.
-- Re-read [the incident page](/kb/incidents/4471) after the parser fix ships: its "one issue" line
-  will be wrong until then.
+- A one-day move after the parser fix is a new report, not a duplicate of #4471: open a ticket.
+- [The incident page](/kb/incidents/4471) still says "one issue". Read it next to this one.
 
 <RenderStamp {signature} />
